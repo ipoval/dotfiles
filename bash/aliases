@@ -1,5 +1,5 @@
 alias ls='ls -GFlh'
-alias rm='rm -i'
+alias rm='rm -iv'
 alias mv='mv -i'
 alias cp='cp -i'
 alias type='type -a'
