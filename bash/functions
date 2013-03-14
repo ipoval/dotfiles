@@ -1,0 +1,12 @@
+# find top-size files in the current directory w. an optional arg. to limit the output
+#
+# usage
+# a. ducks
+# b. ducks 20
+#
+function ducks() {
+  number_of_files_to_display=${1:-10}
+  number_of_files_to_display=$((number_of_files_to_display+1))
+
+  du -cms * | sort -rn | head -n $number_of_files_to_display
+}
