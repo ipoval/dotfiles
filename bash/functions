@@ -10,3 +10,15 @@ function ducks() {
 
   du -cms * | sort -rn | head -n $number_of_files_to_display
 }
+
+# copy current path
+#
+# usage
+# a.
+#   ccp
+#   switch terminal window
+#   CTRL + V
+#
+function ccp() {
+  pwd | pbcopy
+}
