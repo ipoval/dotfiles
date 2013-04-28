@@ -9,7 +9,6 @@ if [ -d '~/.rake' ]
     echo '*** global ~/.rake/ folder exists ***'
   else
     mkdir ~/.rake/
-
 (\cat << CODE
 #!/usr/bin/env ruby
 
@@ -23,3 +22,5 @@ CODE
 ) > ~/.rake/default.rake
     echo '*** created global ~/.rake/ to be run with "rake -g name_of_rake_task" ***'
 fi
+
+psysinfo;

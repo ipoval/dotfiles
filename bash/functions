@@ -22,3 +22,39 @@ function ducks() {
 function ccp() {
   pwd | pbcopy
 }
+
+# print system information
+function psysinfo() {
+  echo ' '
+  echo '---------------------------------'
+  echo '- S E R V E R -'
+  echo '---------------------------------'
+  echo ' '
+  echo "Network node hostname : `uname -n`"
+  echo "Machine hardware name : `uname -m`"
+  echo "Operating system      : `uname -o`"
+  echo "Kernel name           : `uname -s`"
+  echo "Kernel version        : `uname -v`"
+  echo "Kernel release        : `uname -r`"
+  echo "Processor Type        : `uname -p`"
+  echo "Hardware Platform     : `uname -i`"
+  echo ' '
+  echo '---------------------------------'
+  echo '- M E M O R Y -'
+  echo '---------------------------------'
+  echo ' '
+  cat /proc/meminfo | grep MemTotal
+  echo ' '
+  echo '---------------------------------'
+  echo '- P R O C E S S O R S -'
+  echo '---------------------------------'
+  echo ' '
+  cat /proc/cpuinfo | grep 'model name'| nl
+  echo ' '
+  echo '---------------------------------'
+  echo '- D I S K S P A C E -'
+  echo '---------------------------------'
+  echo ' '
+  df -h
+  echo ' '
+}
