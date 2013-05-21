@@ -6,5 +6,8 @@ alias type='type -a'
 alias grep='grep --color=auto'
 alias cat='cat -en'
 alias less='less -N'
+
 alias gl='git log --graph --oneline'
+
+alias cdgems='cd $(gem environment | grep "INSTALLATION DIRECTORY" | cut -c 29-) && ls'
 alias be='bundle exec'
