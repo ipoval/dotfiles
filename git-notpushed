@@ -7,5 +7,4 @@
 curr_branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
 origin=$(git config --get "branch.$curr_branch.remote")
 origin=${origin:-origin}
-
 git log $@ $curr_branch ^remotes/$origin/$curr_branch

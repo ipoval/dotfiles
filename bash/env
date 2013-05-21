@@ -1,6 +1,6 @@
 EDITOR='mate -w'
 export FCEDIT
-export PATH=$PATH:~/bin:/usr/local/sbin
+export PATH=$PATH:~/bin:~/bin/dotfiles:/usr/local/sbin
 export HISTIGNORE="clear:bg:fg:cd:cd -:exit:date:w:* --help"
 
 # Ruby memory management
