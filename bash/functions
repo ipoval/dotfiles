@@ -23,6 +23,20 @@ function ccp() {
   pwd | pbcopy
 }
 
+function take() {
+  mkdir -p "$1"
+  cd "$1"
+}
+
+# kill the process by name
+#
+# usage
+# a.
+#   kil skype
+function kil() {
+  ps ax | grep -i $1 | cut -d ' ' -f 1 | xargs kill
+}
+
 # print system information
 function psysinfo() {
   echo ' '

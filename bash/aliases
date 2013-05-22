@@ -1,4 +1,8 @@
+alias s='cd ..' # up one dir
+alias cls='clear; ls'
 alias ls='ls -GFlh'
+alias l.='ls -d .[^.]*'
+alias l='ls -lhGt' # -l long listing, most recent first
 alias rm='rm -iv'
 alias mv='mv -i'
 alias cp='cp -i'
@@ -6,6 +10,7 @@ alias type='type -a'
 alias grep='grep --color=auto'
 alias cat='cat -en'
 alias less='less -N'
+alias o='open . &'
 
 alias gl='git log --graph --oneline'
 
