@@ -12,6 +12,7 @@ alias cat='cat -en'
 alias less='less -N'
 alias o='open . &'
 
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gl='git log --graph --oneline'
 
 alias cdgems='cd $(gem environment | grep "INSTALLATION DIRECTORY" | cut -c 29-) && ls'

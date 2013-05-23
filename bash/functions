@@ -37,6 +37,28 @@ function kil() {
   ps ax | grep -i $1 | cut -d ' ' -f 1 | xargs kill
 }
 
+# git clone from github
+function ghbcln() {
+  git clone git://github.com/$1/$2.git
+}
+
+# setup a tracking branch from [remote] [branch_name]
+function gbt() {
+  git branch --track $2 $1/$2 && git checkout $2
+}
+
+function markdown() {
+  /Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html
+}
+
+# nginx
+function nginx_stop() {
+  ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
+}
+function nginx_start() {
+  sudo /opt/nginx/sbin/nginx
+}
+
 # print system information
 function psysinfo() {
   echo ' '
