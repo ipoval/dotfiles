@@ -1,57 +1,35 @@
-# Call from inside an initialized Git repo, with the name of the repo.
-function new-git() {
-  ssh git@example.com "mkdir $1.git && cd $1.git && git --bare init"
-  git remote add origin git@example.com:$1.git
-  git push origin master
-  git config branch.master.remote origin
-  git config branch.master.merge refs/heads/master
-  git config push.default current
+function rmt() {
+  for file in $*
+  do
+    __rm_single_file $file
+  done
 }
 
-# Setup a tunnel
-function haproxyssh() { 
-  ssh -L7997:127.0.0.1:7997 deploy@$1.com 
-}
+function __rm_single_file() {
+  if ! [ -d ~/.Trash/ ]
+  then
+    command /bin/mkdir ~/.Trash
+  fi
 
-# Syntax check Javascript
-function jsc() { 
-  jsl -conf /etc/jsl/jsl.conf -process $1 
-}
+  if ! [ $# -eq 1 ]
+  then
+    echo "__rm_single_file: 1 argument required but $# passed."
+    exit
+  fi
 
-# From http://github.com/suztomo/dotfiles
-function rmf(){
-    for file in $*
+  if [ -e $1 ]
+  then
+    BASENAME=`basename $1`
+    NAME=$BASENAME
+    COUNT=0
+    while [ -e ~/.Trash/$NAME ]
     do
-        __rm_single_file $file
+      COUNT=$(($COUNT+1))
+      NAME="$BASENAME.$COUNT"
     done
+
+    command /bin/mv $1 ~/.Trash/$NAME
+  else
+    echo "No such file or directory: $file"
+  fi
 }
-
-function __rm_single_file(){
-    if ! [ -d ~/.Trash/ ]
-    then
-        command /bin/mkdir ~/.Trash
-    fi
-
-    if ! [ $# -eq 1 ]
-    then
-        echo "__rm_single_file: 1 argument required but $# passed."
-        exit
-    fi
-
-    if [ -e $1 ]
-    then
-        BASENAME=`basename $1`
-        NAME=$BASENAME
-        COUNT=0
-        while [ -e ~/.Trash/$NAME ]
-        do
-            COUNT=$(($COUNT+1))
-            NAME="$BASENAME.$COUNT"
-        done
-
-        command /bin/mv $1 ~/.Trash/$NAME
-    else
-        echo "No such file or directory: $file"
-    fi
-}
-
