@@ -34,7 +34,7 @@ function take() {
 # a.
 #   kil skype
 function kil() {
-  ps ax | grep -i $1 | cut -d ' ' -f 1 | xargs kill
+  ps ax | grep -i $1 | cut -d ' ' -f 1 | xargs kill -9
 }
 
 # git clone from github
@@ -53,7 +53,7 @@ function markdown() {
 
 # nginx
 function nginx_stop() {
-  ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
+  kil nginx
 }
 function nginx_start() {
   sudo /opt/nginx/sbin/nginx
