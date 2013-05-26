@@ -1,5 +1,4 @@
-EDITOR='mate -w'
-export FCEDIT
+export EDITOR="/usr/local/bin/mate -w"
 export PATH=$PATH:~/bin:~/bin/dotfiles:/usr/local/sbin
 export HISTIGNORE="clear:bg:fg:cd:cd -:exit:date:w:* --help"
 
