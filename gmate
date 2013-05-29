@@ -1,0 +1,17 @@
+#!/usr/bin/ruby -w
+
+# Take output of grep and open all filenames in TextMate.
+# grep -ri 'TextMate' . | gmate
+
+flag   = ARGV.first
+input  = ARGV.last || STDIN.read
+binary = flag == '-r' ? 'rmate' : 'mate'
+files  = []
+
+input.scan(/^([^:]+):/).each do |match|
+  files << match.first
+end
+
+files.uniq!
+
+system "#{binary} #{files.join(' ')}"
