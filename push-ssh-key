@@ -39,9 +39,9 @@ module KeyInstaller
     ssh_command = %Q{echo '#{public_key}' | ssh #{host} -p #{ssh_port} "mkdir -p .ssh && cat - >> .ssh/authorized_keys2"}
 
     if %x[ #{ssh_command} ] == ''
-      puts " ** Key installed to '#{host}' successfully."
+      puts "** Key installed to '#{host}' successfully."
     else
-      puts " ** Something went wrong."
+      puts "** Something went wrong."
     end
 
   end
