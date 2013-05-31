@@ -1,5 +1,6 @@
 alias s='cd ..' # up one dir
 alias cls='clear; ls'
+alias history='history 30'
 alias ls='ls -GFlh'
 alias l.='ls -d .[^.]*'
 alias l='ls -lhGt' # -l long listing, most recent first
@@ -13,8 +14,8 @@ alias cat='cat -en'
 alias less='less -N'
 alias o='open . &'
 
-alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gl='git log --graph --oneline'
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
 
 alias cdgems='cd $(gem environment | grep "INSTALLATION DIRECTORY" | cut -c 29-) && ls'
 alias be='bundle exec'
