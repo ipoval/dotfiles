@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+# run with "rake -g name_of_rake_task"
+task :default => :default_rake_task
+
+task :default_rake_task do
+  puts 'rake -g name_of_rake_task'
+  require 'etc'
+  puts Etc.getlogin
+end

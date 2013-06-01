@@ -1,5 +1,3 @@
-# ln -s ~/bin/dotfiles/bash_profile .bash_profile
-
 if [ -f ~/bin/dotfiles/bashrc ];
 then
   source ~/bin/dotfiles/bashrc
