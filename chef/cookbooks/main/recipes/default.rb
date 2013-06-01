@@ -28,10 +28,6 @@ execute "rmate - edit remote files via SSH with Textmate" do
   user node['user']
 end
 
-# zip_app_package "Mou" do
-#   source "http://mouapp.com/download/Mou.zip"
-# end
-
 # Mac OS
 # dmg_package "Google Chrome" do
 #   dmg_name "googlechrome"
