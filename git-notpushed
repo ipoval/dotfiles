@@ -8,3 +8,20 @@ curr_branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
 origin=$(git config --get "branch.$curr_branch.remote")
 origin=${origin:-origin}
 git log $@ $curr_branch ^remotes/$origin/$curr_branch
+
+# def create_branch(branch_name, origin, current_branch)
+#   cmd = []
+#   cmd << "git push origin #{current_branch}:refs/heads/#{branch_name}"
+#   cmd << "git fetch #{origin}"
+#   cmd << "git branch --track #{branch_name} #{origin}/#{branch_name}"
+#   cmd << "git checkout #{branch_name}"
+#   execute_cmd(cmd)
+# end
+# 
+# def delete_branch(branch_name, origin, current_branch)
+#   cmd = []
+#   cmd << "git push #{origin} :refs/heads/#{branch_name}"
+#   cmd << "git checkout master" if current_branch == branch_name
+#   cmd << "git branch -d #{branch_name}"
+#   execute_cmd(cmd)
+# end
