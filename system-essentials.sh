@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
-if [ ! `which brew` ]
+if [ `uname` = 'Linux' ]
 then
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  apt-get -y update
+  # INSTALL NECCESSARY DEVELOPMENT TOOLS ON UBUNTU (UNIX)
+  apt-get -y install build-essential zlib1g-dev libssl-dev libreadline5-dev libyaml-dev
 fi
-
-# if [ `uname` = 'Linux' ]
-# then
-#   apt-get -y update
-#   # INSTALL NECCESSARY DEVELOPMENT TOOLS ON UBUNTU (UNIX)
-#   apt-get -y install build-essential zlib1g-dev libssl-dev libreadline5-dev libyaml-dev
-# fi
 
 # ruby
 cd /tmp
@@ -25,16 +20,18 @@ make install
 sudo ln -s -f ~/bin/dotfiles/chef/ /var/chef
 gem install chef --no-ri --no-rdoc
 
-# brew update
-# brew doctor
-# brew install libyaml
-# brew install tree
-# brew install imagemagick
-# brew install ssh-copy-id
-# brew install proctools
+if [ ! `which brew` ]
+then
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+fi
 
-# edit remote files via SSH with Textmate
-# gem install rmate
+brew update
+brew doctor
+brew install libyaml
+brew install tree
+brew install imagemagick
+brew install ssh-copy-id
+brew install proctools
 
 # Textmate2 install
 # 
@@ -42,9 +39,7 @@ gem install chef --no-ri --no-rdoc
 # 
 # Security Set the git-shell as the default shell for the git user in /etc/passwd
 # /usr/local/bin/git-shell
-# 
-# Qwandry gives you a single way to easily open all your projects and libraries
-# https://github.com/adamsanderson/qwandry
+
 
 # Install GCC + Git
 # mkdir ~/tmp
@@ -53,5 +48,5 @@ gem install chef --no-ri --no-rdoc
 # sudo installer -pkg GCC-10.7-v2.pkg -target /
 
 # chef
-# https://github.com/pivotal/pivotal_workstation
+# https://github.com/pivotal-sprout/sprout
 # https://github.com/opscode-cookbooks/dmg

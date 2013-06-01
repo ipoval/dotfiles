@@ -17,6 +17,17 @@ template "#{node[:homedir]}/.rake/default.rake" do
   owner node[:user]
 end
 
+# https://github.com/adamsanderson/qwandry
+execute "qwandry - single way to open all your projects and libraries" do
+  command "gem install qwandry --no-ri --no-rdoc"
+  user node['user']
+end
+
+execute "rmate - edit remote files via SSH with Textmate" do
+  command "gem install rmate --no-ri --no-rdoc"
+  user node['user']
+end
+
 # zip_app_package "Mou" do
 #   source "http://mouapp.com/download/Mou.zip"
 # end
