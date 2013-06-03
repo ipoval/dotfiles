@@ -1,33 +1,9 @@
 {
   "run_list": [
-    "recipe[main]"
+    "recipe[dmg]",
+    "recipe[main]",
+    "recipe[osx-apps]"
   ],
   "user": "ivan",
   "homedir": "/Users/ivan"
 }
-
-/*
-{
-  "run_list": [
-      "recipe[main]",
-      "recipe[git]",
-      "recipe[rvm]",
-      "recipe[apps]"
-  ],
-
-  "packages" : [
-  "wget",
-  "tmux",
-  "watch",
-  "mobile-shell",
-  "imagemagick",
-  "solr",
-  "mysql",
-  "aspell",
-  "htmldoc",
-  "ghostscript",
-  "redis",
-  "pdftohtml"
-  ],
-}
-*/
