@@ -2,6 +2,7 @@
   "run_list": [
     "recipe[dmg]",
     "recipe[main]",
+    "recipe[ubuntu_toolbox]",
     "recipe[osx-apps]"
   ],
   "user": "ivan",

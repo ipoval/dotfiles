@@ -24,22 +24,12 @@ if [ ! `which brew` ]
 then
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 fi
-
 brew update
 brew doctor
-brew install libyaml
-brew install tree
-brew install imagemagick
-brew install ssh-copy-id
-brew install proctools
 
 # Textmate2 install
 # 
 # gitk --all & # - very handy to use and monitor the branch and commits changes
-# 
-# Security Set the git-shell as the default shell for the git user in /etc/passwd
-# /usr/local/bin/git-shell
-
 
 # Install GCC + Git
 # mkdir ~/tmp
