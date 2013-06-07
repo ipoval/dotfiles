@@ -1,3 +1,14 @@
+unless File.exists?('/usr/local/bin/mate')
+  application 'TextMate2' do
+    source 'http://api.textmate.org/downloads/release'
+  end
+
+  link '/usr/local/bin/mate' do
+    to '/Applications/TextMate.app/Contents/SharedSupport/Support/bin/mate'
+    owner node[:user]
+  end
+end
+
 dmg_package "Google Chrome" do
   dmg_name "googlechrome"
   source "https://dl-ssl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg"

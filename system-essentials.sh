@@ -27,10 +27,6 @@ fi
 brew update
 brew doctor
 
-# Textmate2 install
-# 
-# gitk --all & # - very handy to use and monitor the branch and commits changes
-
 # Install GCC + Git
 # mkdir ~/tmp
 # cd ~/tmp
