@@ -5,6 +5,6 @@
     "recipe[ubuntu_toolbox]",
     "recipe[osx-apps]"
   ],
-  "user": "ivan",
-  "homedir": "/Users/ivan"
+  "user": "ipoval",
+  "homedir": "/Users/ipoval"
 }

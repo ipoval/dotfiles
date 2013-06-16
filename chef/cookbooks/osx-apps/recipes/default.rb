@@ -1,12 +1,30 @@
 unless File.exists?('/usr/local/bin/mate')
-  application 'TextMate2' do
-    source 'http://api.textmate.org/downloads/release'
+  remote_file "/tmp/textmate2.zip" do
+    source "http://api.textmate.org/downloads/release"
+    owner node['user']
   end
 
-  link '/usr/local/bin/mate' do
-    to '/Applications/TextMate.app/Contents/SharedSupport/Support/bin/mate'
-    owner node[:user]
+  execute 'install' do
+    command "cd /tmp && tar -xvzf textmate2.zip"
+    command "mv /tmp/TextMate.app /Applications/"
+    command "\rm /tmp/textmate2.zip"
+    command "ln -s /Applications/TextMate.app/Contents/MacOS/TextMate /usr/local/bin/mate"
+    user node['user']
   end
+
+  ruby_block "test to see if TextMate.app is installed" do
+    block do
+      raise "TextMate.app was not installed" unless File.exists?("/Applications/TextMate.app")
+    end
+  end
+end
+
+dmg_package "Alfred" do
+  volumes_dir "Alfred.app"
+  source "http://cachefly.alfredapp.com/alfred_1.3.1_261.dmg"
+  checksum "c951c4dc05ff1091359358d710142cabef2c190be41f799244669f879cff7e80"
+  action :install
+  owner node['user']
 end
 
 dmg_package "Google Chrome" do
@@ -23,8 +41,24 @@ dmg_package "Dropbox" do
   action :install
 end
 
-execute "set dock to be on left" do
-  command "defaults write com.apple.dock orientation -string left"
+dmg_package "Evernote" do
+  volumes_dir "Evernote"
+  source "http://evernote.com/download/get.php?file=EvernoteMac"
+  checksum "5639b8f5f6b5202a1d7e6cffd8ca2a4c11fd0c41f339466272aa7672abb8fd47"
+  accept_eula true
+  action :install
+  owner node['user']
+end
+
+dmg_package "Skype" do
+  source "http://download.skype.com/macosx/Skype_6.0.0.2968.dmg"
+  checksum "7f53dd799b7b99c70f6b62fde0cb74c4"
+  owner node['user']
+  action :install
+end
+
+execute "set dock to be on the right" do
+  command "defaults write com.apple.dock orientation -string right"
   user node['user']
 end
 
