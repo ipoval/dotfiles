@@ -1,8 +1,8 @@
 {
   "run_list": [
     "recipe[dmg]",
-    "recipe[main]",
     "recipe[ubuntu_toolbox]",
+    "recipe[osx-base]",
     "recipe[osx-apps]"
   ],
   "user": "ipoval",

@@ -8,6 +8,11 @@ end
 #   not_if { File.exists? File.join(node[:homebrew_dir], 'libyaml/') }
 # end
 
+execute 'brew install htop' do
+  command 'brew install htop'
+  not_if { File.exists? File.join(node[:homebrew_dir], 'htop/') }
+end
+
 execute 'brew install tree' do
   command 'brew install tree'
   not_if { File.exists? File.join(node[:homebrew_dir], 'tree/') }

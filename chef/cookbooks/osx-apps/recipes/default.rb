@@ -24,14 +24,7 @@ dmg_package "Alfred" do
   source "http://cachefly.alfredapp.com/alfred_1.3.1_261.dmg"
   checksum "c951c4dc05ff1091359358d710142cabef2c190be41f799244669f879cff7e80"
   action :install
-  owner node['user']
-end
-
-dmg_package "Google Chrome" do
-  dmg_name "googlechrome"
-  source "https://dl-ssl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg"
-  checksum "7daa2dc5c46d9bfb14f1d7ff4b33884325e5e63e694810adc58f14795165c91a"
-  action :install
+  owner node[:user]
 end
 
 dmg_package "Dropbox" do
@@ -47,21 +40,28 @@ dmg_package "Evernote" do
   checksum "5639b8f5f6b5202a1d7e6cffd8ca2a4c11fd0c41f339466272aa7672abb8fd47"
   accept_eula true
   action :install
-  owner node['user']
+  owner node[:user]
+end
+
+dmg_package "Google Chrome" do
+  dmg_name "googlechrome"
+  source "https://dl-ssl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg"
+  checksum "7daa2dc5c46d9bfb14f1d7ff4b33884325e5e63e694810adc58f14795165c91a"
+  action :install
 end
 
 dmg_package "Skype" do
   source "http://download.skype.com/macosx/Skype_6.0.0.2968.dmg"
   checksum "7f53dd799b7b99c70f6b62fde0cb74c4"
-  owner node['user']
+  owner node[:user]
   action :install
 end
 
-execute "set dock to be on the right" do
+execute "Dock position on screen - right" do
   command "defaults write com.apple.dock orientation -string right"
-  user node['user']
+  user node[:user]
 end
 
-execute "relaunch dock" do
+execute "Dock relaunch" do
   command "killall Dock"
 end
