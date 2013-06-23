@@ -27,3 +27,8 @@ execute 'brew install proctools' do
   command 'brew install proctools'
   not_if { File.exists? File.join(node[:homebrew_dir], 'proctools/') }
 end
+
+execute 'brew install graphviz' do
+  command 'brew install graphviz'
+  not_if { File.exists? File.join(node[:homebrew_dir], 'graphviz/') }
+end
