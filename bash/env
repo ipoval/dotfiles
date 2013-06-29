@@ -1,6 +1,7 @@
 export EDITOR="/usr/local/bin/mate -w"
 export PATH=$PATH:~/bin:~/bin/dotfiles:/usr/local/sbin
 export HISTIGNORE="clear:bg:fg:cd:cd -:exit:date:w:* --help"
+export RMATE="-R 52698:127.0.0.1:52698"
 
 # Ruby memory management
 export RUBY_HEAP_MIN_SLOTS=1000000

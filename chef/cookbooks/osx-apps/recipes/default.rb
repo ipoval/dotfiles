@@ -23,8 +23,8 @@ dmg_package "Alfred" do
   volumes_dir "Alfred.app"
   source "http://cachefly.alfredapp.com/alfred_1.3.1_261.dmg"
   checksum "c951c4dc05ff1091359358d710142cabef2c190be41f799244669f879cff7e80"
-  action :install
   owner node[:user]
+  action :install
 end
 
 dmg_package "Dropbox" do
@@ -39,8 +39,8 @@ dmg_package "Evernote" do
   source "http://evernote.com/download/get.php?file=EvernoteMac"
   checksum "5639b8f5f6b5202a1d7e6cffd8ca2a4c11fd0c41f339466272aa7672abb8fd47"
   accept_eula true
-  action :install
   owner node[:user]
+  action :install
 end
 
 dmg_package "Google Chrome" do
@@ -56,6 +56,15 @@ dmg_package "Skype" do
   owner node[:user]
   action :install
 end
+
+# FIXME
+# dmg_package 'uTorrent' do
+#   source 'http://download-new.utorrent.com/endpoint/utmac/os/osx/track/stable/'
+#   checksum '2d8cdf4934661f6c28b1f2b343ce5b8411ffddf21ae46159153ce9a464adcba5'
+#   type 'pkg'
+#   owner node[:user]
+#   action :install
+# end
 
 execute "Dock position on screen - right" do
   command "defaults write com.apple.dock orientation -string right"
