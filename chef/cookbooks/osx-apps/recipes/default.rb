@@ -57,7 +57,6 @@ dmg_package "Skype" do
   action :install
 end
 
-# FIXME
 # dmg_package 'uTorrent' do
 #   source 'http://download-new.utorrent.com/endpoint/utmac/os/osx/track/stable/'
 #   checksum '2d8cdf4934661f6c28b1f2b343ce5b8411ffddf21ae46159153ce9a464adcba5'
