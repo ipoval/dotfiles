@@ -1,3 +1,8 @@
+execute 'brew install node and npm' do
+  command 'brew install node'
+  not_if { File.exists? File.join(node[:homebrew_dir], 'node/') }
+end
+
 execute 'brew install imagemagick' do
   command 'brew install imagemagick'
   not_if { File.exists? File.join(node[:homebrew_dir], 'imagemagick/') }
