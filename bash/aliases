@@ -1,4 +1,5 @@
-alias s='cd ..' # up one dir
+alias echo='echo -e'              # enable \n
+alias s='cd ..'                   # up one dir
 alias cls='clear; ls'
 alias history='history 30'
 alias ls='ls -GFlh'
