@@ -1,3 +1,9 @@
+# grep multiple pdf files
+#
+function pdfgrep() {
+  find . -name '*.pdf' -exec pdftotext {} - \; grep $@;
+}
+
 # find top-size files in the current directory w. an optional arg. to limit the output
 #
 # usage
@@ -15,7 +21,7 @@ function ducks() {
 #
 # usage
 # a.
-#   ccp
+#   CCP
 #   switch terminal window
 #   CTRL + V
 #
