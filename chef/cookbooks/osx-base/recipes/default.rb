@@ -8,13 +8,17 @@ execute 'symlink ~/.bash_logout' do
   user node[:user]
 end
 
-# https://github.com/adamsanderson/qwandry
-execute 'qwandry - single way to open all your projects and libraries' do
-  command 'gem install qwandry --no-ri --no-rdoc'
-  user node[:user]
+gem_package 'qwandry' do
+  # https://github.com/adamsanderson/qwandry
+  action :install
+  options '--no-ri --no-rdoc'
 end
 
-execute 'rmate - edit remote files via SSH with Textmate' do
-  command 'gem install rmate --no-ri --no-rdoc'
-  user node[:user]
+gem_package 'rmate' do
+  action :install
+  options '--no-ri --no-rdoc'
 end
+# execute 'rmate - edit remote files via SSH with Textmate' do
+#   command 'gem install rmate --no-ri --no-rdoc'
+#   user node[:user]
+# end
