@@ -22,3 +22,16 @@ end
 #   command 'gem install rmate --no-ri --no-rdoc'
 #   user node[:user]
 # end
+
+##
+# Code metrics tools
+#
+gem_package 'flog' do
+  action :install
+  options '--no-ri --no-rdoc'
+end
+
+gem_package 'flay' do
+  action :install
+  options '--no-ri --no-rdoc'
+end
