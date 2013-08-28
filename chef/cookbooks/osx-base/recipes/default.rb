@@ -8,12 +8,6 @@ execute 'symlink ~/.bash_logout' do
   user node[:user]
 end
 
-gem_package 'qwandry' do
-  # https://github.com/adamsanderson/qwandry
-  action :install
-  options '--no-ri --no-rdoc'
-end
-
 gem_package 'rmate' do
   action :install
   options '--no-ri --no-rdoc'
@@ -22,16 +16,3 @@ end
 #   command 'gem install rmate --no-ri --no-rdoc'
 #   user node[:user]
 # end
-
-##
-# Code metrics tools
-#
-gem_package 'flog' do
-  action :install
-  options '--no-ri --no-rdoc'
-end
-
-gem_package 'flay' do
-  action :install
-  options '--no-ri --no-rdoc'
-end

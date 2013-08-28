@@ -3,6 +3,7 @@
     "recipe[dmg]",
     "recipe[ubuntu_toolbox]",
     "recipe[osx-base]",
+    "recipe[osx-base::ruby]",
     "recipe[osx-base::config_git]",
     "recipe[osx-base::config_rake]",
     "recipe[osx-base::config_ssh]",
