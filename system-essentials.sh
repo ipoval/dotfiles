@@ -26,7 +26,7 @@ brew doctor
 
 # ruby
 # via rvm
-\curl -L https://get.rvm.io | bash -s stable --rails # Or, --ruby=1.9.3
+\curl -L https://get.rvm.io | bash -s stable --rails
 source /Users/ipoval/.rvm/scripts/rvm
 #cd /tmp
 #curl -O ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p195.tar.gz
@@ -36,12 +36,8 @@ source /Users/ipoval/.rvm/scripts/rvm
 #sudo make
 #sudo make install
 
-# chef-solo
+# CHEF-SOLO
 # sudo ln -s -f ~/bin/dotfiles/chef/ /var/chef
-# sudo gem install chef --no-ri --no-rdoc
-
-# Run chef-solo
-# chef-solo -c solo.rb -j node.json
-
-# FIXME: downgrading rubygems - had to make chef work
-# gem update --system 1.8.25
+# sudo gem install chef --no-ri --no-rdoc -v '11.6.0'
+  # Run chef-solo
+  # chef-solo -c solo.rb -j node.json
