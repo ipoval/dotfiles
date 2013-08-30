@@ -37,3 +37,8 @@ execute 'brew install graphviz' do
   command 'brew install graphviz'
   not_if { File.exists? File.join(node[:homebrew_dir], 'graphviz/') }
 end
+
+execute 'brew install nmap' do
+  command 'brew install nmap'
+  not_if { File.exists? File.join(node[:homebrew_dir], 'nmap/') }
+end
