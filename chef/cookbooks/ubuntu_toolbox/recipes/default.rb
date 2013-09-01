@@ -59,3 +59,8 @@ execute 'pstree' do
   command 'brew install pstree'
   action :nothing
 end
+
+execute 'brew install watch' do
+  command 'brew install watch'
+  not_if { should_brew.call 'watch' }
+end
