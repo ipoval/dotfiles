@@ -1,0 +1,11 @@
+require 'irb/completion'
+
+begin
+  require 'awesome_print'
+rescue LoadError => error
+  warn 'Could not load AwesomePrint: %s' % error
+end
+
+IRB.conf[:PROMPT_MODE]  = :SIMPLE
+IRB.conf[:EVAL_HISTORY] = 1000
+IRB.conf[:SAVE_HISTORY] = 1000
