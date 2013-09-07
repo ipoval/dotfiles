@@ -1,3 +1,5 @@
+include_recipe :dmg
+
 unless File.exists?('/usr/local/bin/mate')
   remote_file "/tmp/textmate2.zip" do
     source "http://api.textmate.org/downloads/release"
@@ -69,7 +71,4 @@ execute "Dock position on screen - right" do
   command "defaults write com.apple.dock orientation -string right"
   user node[:user]
 end
-
-execute "Dock relaunch" do
-  command "killall Dock"
-end
+execute("Dock relaunch") { command "killall Dock" }

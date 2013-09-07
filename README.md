@@ -1,8 +1,6 @@
 dotfiles
 ========
 
-dotfiles
-
 chef
 ====
 

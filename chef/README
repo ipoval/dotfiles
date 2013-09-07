@@ -9,3 +9,14 @@ ATTRIBUTES
     -> Normal / Set
     -> Override
     -> Automatic
+
+CHEF-SOLO
+  sudo ln -s -f ~/bin/dotfiles/chef/ /var/chef
+  sudo gem install chef --no-ri --no-rdoc -v '11.6.0'
+
+  RUN
+  chef-solo -c solo.rb -j node.json
+
+CHEF-EXAMPLES
+  https://github.com/pivotal-sprout/sprout-wrap
+  https://github.com/opscode-cookbooks

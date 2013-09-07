@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# chef
-# https://github.com/pivotal-sprout/sprout-wrap
-# https://github.com/opscode-cookbooks
-
 if [ `uname` = 'Linux' ]
 then
   apt-get -y update
@@ -24,17 +20,9 @@ fi
 brew update
 brew doctor
 
-# ruby
-# via rvm
+# ruby via rvm
 \curl -L https://get.rvm.io | bash -s stable --rails
 source /Users/ipoval/.rvm/scripts/rvm
-#cd /tmp
-#curl -O ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p195.tar.gz
-#tar -xvzf ruby-2.0.0-p195.tar.gz
-#cd ruby-2.0.0-p195/
-#./configure --prefix=/usr/local
-#sudo make
-#sudo make install
 
 # CHEF-SOLO
 # sudo ln -s -f ~/bin/dotfiles/chef/ /var/chef

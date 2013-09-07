@@ -1,6 +1,5 @@
 {
   "run_list": [
-    "recipe[dmg]",
     "recipe[ubuntu_toolbox]",
     "recipe[osx-base]",
     "recipe[osx-base::ruby]",
