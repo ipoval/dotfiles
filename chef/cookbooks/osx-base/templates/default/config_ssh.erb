@@ -1,4 +1,4 @@
-Host aws-ipoval-micro
-HostName ec2-23-23-6-244.compute-1.amazonaws.com
-User ubuntu
-IdentityFile "~/.ssh/ipovalec2-pkey.pem"
+Host <%= @node[:ssh_config][:ec2_micro][:host] %>
+HostName <%= @node[:ssh_config][:ec2_micro][:host_name] %>
+User <%= @node[:ssh_config][:ec2_micro][:user] %>
+IdentityFile "<%= @identity_file %>"

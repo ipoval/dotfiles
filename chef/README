@@ -1,0 +1,11 @@
+ATTRIBUTES
+  Defined in:
+    -> Cookbook        (low precedence)
+      -> Environment   |
+        -> Role        |
+          -> Node      (high precedence)
+  Kinds:
+    -> Default
+    -> Normal / Set
+    -> Override
+    -> Automatic
