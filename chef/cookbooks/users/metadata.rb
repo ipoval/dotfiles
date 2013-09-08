@@ -1,0 +1,5 @@
+maintainer       '@ipoval'
+maintainer_email 'ipoval@ya.ru'
+description      'configures users and groups'
+version          '0.1'
+depends          'ruby-shadow'

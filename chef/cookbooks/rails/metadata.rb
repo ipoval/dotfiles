@@ -1,0 +1,6 @@
+maintainer       'ipoval'
+maintainer_email 'ipoval@ya.ru'
+description      'sample rails app'
+version          '0.1'
+depends          'nginx'
+depends          'unicorn'
