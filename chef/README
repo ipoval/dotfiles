@@ -5,17 +5,23 @@ ATTRIBUTES
         -> Role        |
           -> Node      (high precedence)
   Kinds:
-    -> Default
-    -> Normal / Set
+    -> Default         defined in a cookbook
+    -> Normal / Set    defined in a run list / node
     -> Override
     -> Automatic
+      `ohai` gem-command to list all of the server's attributes
 
 CHEF-SOLO
   sudo ln -s -f ~/bin/dotfiles/chef/ /var/chef
   sudo gem install chef --no-ri --no-rdoc -v '11.6.0'
 
-  RUN
   chef-solo -c solo.rb -j node.json
+
+  # dry run, attempts to show what would be changed without running any destructive commands on the node
+  chef-solo --whyrun
+
+  # using remote run list
+  chef-solo -j http://example.com/run_list.json
 
 CHEF-EXAMPLES
   https://github.com/pivotal-sprout/sprout-wrap
