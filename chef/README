@@ -26,3 +26,6 @@ CHEF-SOLO
 CHEF-EXAMPLES
   https://github.com/pivotal-sprout/sprout-wrap
   https://github.com/opscode-cookbooks
+
+KNIFE - CLI between a local chef-repo and the server
+  `knife upload ruby`
