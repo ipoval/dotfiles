@@ -23,9 +23,13 @@ CHEF-SOLO
   # using remote run list
   chef-solo -j http://example.com/run_list.json
 
-CHEF-EXAMPLES
+KNIFE - CLI between a local chef-repo and the server
+  `knife diff cookbooks/path`              - see exactly what changes will be uploaded with `knife upload cookbook/path`
+  `knife upload ruby`                      - upload roles, cookbooks, environments and data bags to the server from the cur work dir in chef-repo
+
+CHEF-CLIENT
+  `sudo chef-client -j /etc/chef/first-boot.json`
+
+CHEF ENVIRONMENTS
   https://github.com/pivotal-sprout/sprout-wrap
   https://github.com/opscode-cookbooks
-
-KNIFE - CLI between a local chef-repo and the server
-  `knife upload ruby`
