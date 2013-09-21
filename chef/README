@@ -26,6 +26,7 @@ CHEF-SOLO
 KNIFE - CLI between a local chef-repo and the server
   `knife diff cookbooks/path`              - see exactly what changes will be uploaded with `knife upload cookbook/path`
   `knife upload ruby`                      - upload roles, cookbooks, environments and data bags to the server from the cur work dir in chef-repo
+  `knife ec2 server create -E lab -x ubuntu -i ~/.ec2/users/mam/keys/us-east-1/key-lab.pem -I ami-3fec7956 -Z us-east-1d --region us-east-1 -f m1.small -r 'role[ec2],role[ami]' --template /Users/ivan/src/mam_chef/templates/gobbler.erb -S key-lab -T Site=lab --ebs-size 8 --color -g default --ephemeral /dev/sdb`
 
 CHEF-CLIENT
   `sudo chef-client -j /etc/chef/first-boot.json`
