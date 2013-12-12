@@ -6,6 +6,7 @@
     "recipe[osx-base::config_git]",
     "recipe[osx-base::config_rake]",
     "recipe[osx-base::config_ssh]",
+    "recipe[osx-base::aws_cli]",
     "recipe[osx-apps]"
   ],
   "user": "ipoval",

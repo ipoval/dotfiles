@@ -15,10 +15,10 @@ CHEF-SOLO
   sudo ln -s -f ~/bin/dotfiles/chef/ /var/chef
   sudo gem install chef --no-ri --no-rdoc -v '11.6.0'
 
-  chef-solo -c solo.rb -j node.json
-
-  # dry run, attempts to show what would be changed without running any destructive commands on the node
+  # Dry-Run, attempts to show what would be changed without running any destructive commands on the node
   chef-solo --whyrun
+
+  cd /var/chef && chef-solo -c solo.rb -j node.json
 
   # using remote run list
   chef-solo -j http://example.com/run_list.json
