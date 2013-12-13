@@ -9,6 +9,6 @@ binary = flag == '-r' ? 'rmate' : 'mate'
 
 files = input.scan(/^([^:]+):/).each_with_object([]) do |match, list|
   list << match.first
-end.uniq!
+end
 
-system "#{binary} #{files.join(' ')}" if files
+system "#{binary} #{files.uniq.join(' ')}" if files.size > 0
