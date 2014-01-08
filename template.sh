@@ -2,9 +2,9 @@
 
 if [ `uname` = 'Linux' ]
 then
-  apt-get -y update
+  sudo apt-get -y update
   # INSTALL NECCESSARY DEVELOPMENT TOOLS ON UBUNTU (UNIX)
-  apt-get -y install build-essential zlib1g-dev libssl-dev libreadline5-dev libyaml-dev
+  sudo apt-get -y install build-essential zlib1g-dev libssl-dev libreadline5-dev libyaml-dev
 fi
 
 # -- Install MacOS XCode

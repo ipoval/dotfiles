@@ -153,17 +153,6 @@ function psysinfo() {
 # Helps to find the number of times a particular class/module is being used in the app.
 # This way you can create a distribution graph of your most coupled classes or
 # found out the classes/modules which are "dead code".
-function grep_rails() {
-  find app lib -name '*.rb' | xargs grep $@;
+function grep_class_count() {
+  grep -rh '^[[:space:]]*\(class\|module\)\b' app lib --include='*.rb' | sed 's/^[[:space:]]*//' | cut -d ' ' -f 2 | while read klass; do echo "`grep -rl "\b$klass\b" app lib --include="*.rb" | wc -l` $klass"; done | sort -n
 }
-
-function grep_rails_class() {
-  grep_rails -h '^[[:space:]]*\(class\|module\)\b' \
-  | sed 's/^[[:space:]]*//' \
-  | cut -d ' ' -f 2 \
-  | while read klass; do
-      echo "`grep_rails -l "\b$klass\b" | wc -l` $klass"
-    done \
-  | sort -n
-}
-# =====================================
