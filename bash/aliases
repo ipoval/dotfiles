@@ -1,6 +1,6 @@
 alias echo='echo -e'              # enable \n
 alias s='pushd ..'                # up one dir
-alias cd="echo '\033[31m use->PUSHD,POPD,DIRS \033[30m'; cd $@"
+# alias cd="echo '\033[31m use->PUSHD,POPD,DIRS \033[30m'; cd $@"
 alias pu='pushd'
 alias po='popd'
 alias di='dirs'
