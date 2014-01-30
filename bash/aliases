@@ -1,5 +1,9 @@
 alias echo='echo -e'              # enable \n
-alias s='cd ..'                   # up one dir
+alias s='pushd ..'                # up one dir
+alias cd="echo '\033[31m use->PUSHD,POPD,DIRS \033[30m'; cd $@"
+alias pu='pushd'
+alias po='popd'
+alias di='dirs'
 alias cls='clear; ls'
 alias history='history 30'
 alias ls='ls -GFlh'

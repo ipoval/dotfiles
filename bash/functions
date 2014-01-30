@@ -42,12 +42,12 @@ function kil() {
 }
 
 function g() {
-  if [[ $# != 0 ]]; then git $@; else git status; fi
+  if [[ $# != 0 ]]; then git $*; else git status; fi
 }
 
 # git clone from github
 function ghbcln() {
-  git clone git://github.com/$1/$2.git
+  git clone git://github.com/$1/$2.git -q &
 }
 
 # setup a tracking branch from [remote] [branch_name]
