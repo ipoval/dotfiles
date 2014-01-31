@@ -15,7 +15,7 @@ alias cp='cp -i'
 alias type='type -a'
 alias which='which -a'
 alias grep='grep -H --color=auto'
-alias cat='cat -en'
+# alias cat='cat -en'
 alias less='less -N'
 alias o='open . &'
 
