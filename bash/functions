@@ -114,6 +114,11 @@ function __rm_single_file() {
   fi
 }
 
+# length "string" # => 6
+function length() {
+  echo $1 | grep -ho . | wc -l;
+}
+
 # print system information
 function psysinfo() {
   echo ' '
