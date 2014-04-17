@@ -3,15 +3,14 @@ include_recipe :dmg
 unless File.exists?('/usr/local/bin/mate')
   remote_file "/tmp/textmate2.zip" do
     source "http://api.textmate.org/downloads/release"
-    owner node['user']
+    owner node[:user]
   end
 
   execute 'install' do
-    command "cd /tmp && tar -xvzf textmate2.zip"
-    command "mv /tmp/TextMate.app /Applications/"
+    command "cd /tmp && tar -xvzf textmate2.zip -C /Applications/"
     command "\rm /tmp/textmate2.zip"
     command "ln -s /Applications/TextMate.app/Contents/MacOS/TextMate /usr/local/bin/mate"
-    user node['user']
+    user node[:user]
   end
 
   ruby_block "test to see if TextMate.app is installed" do
@@ -60,6 +59,14 @@ dmg_package "Skype" do
   owner node[:user]
   action :install
 end
+
+# unless File.exists? '/Applications/Dash.app'
+#   remote_file '/tmp/Dash.zip' do
+#     source 'http://sanfrancisco.kapeli.com/Dash.zip'
+#     owner node[:user]
+#     action :create_if_missing
+#   end
+# end
 
 # dmg_package 'uTorrent' do
 #   source 'http://download-new.utorrent.com/endpoint/utmac/os/osx/track/stable/'
