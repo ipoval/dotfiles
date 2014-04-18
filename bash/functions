@@ -119,6 +119,11 @@ function length() {
   echo $1 | grep -ho . | wc -l;
 }
 
+# upcase "str" # => "STR"
+function upcase() {
+  echo $1 | tr 'a-z' 'A-Z'
+}
+
 # print system information
 function psysinfo() {
   echo ' '
