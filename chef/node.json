@@ -7,7 +7,8 @@
     "recipe[osx-base::config_rake]",
     "recipe[osx-base::config_ssh]",
     "recipe[osx-base::aws_cli]",
-    "recipe[osx-apps]"
+    "recipe[osx-apps]",
+    "recipe[osx-apps::tmux]"
   ],
   "user": "ipoval",
   "homedir": "/Users/ipoval"

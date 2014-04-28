@@ -12,7 +12,3 @@ gem_package 'rmate' do
   action :install
   options '--no-ri --no-rdoc'
 end
-# execute 'rmate - edit remote files via SSH with Textmate' do
-#   command 'gem install rmate --no-ri --no-rdoc'
-#   user node[:user]
-# end
