@@ -7,3 +7,5 @@ source ~/bin/dotfiles/bash/env
 OLDPWD=$(cat ~/.pwd)
 
 psysinfo;
+
+test `which tmux` && tmux

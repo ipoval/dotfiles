@@ -42,8 +42,11 @@ function kil() {
 }
 
 function g() {
-  echo $*;
   if [[ $# != 0 ]]; then git $*; else git status; fi
+}
+
+function gg() {
+  git commit -v -a -m "$*";
 }
 
 # git clone from github
