@@ -42,7 +42,8 @@ function kil() {
 }
 
 function g() {
-  if [[ $# != 0 ]]; then git $@; else git status; fi
+  echo $*;
+  if [[ $# != 0 ]]; then git $*; else git status; fi
 }
 
 # git clone from github
