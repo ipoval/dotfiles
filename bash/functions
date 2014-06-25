@@ -1,5 +1,4 @@
 # grep multiple pdf files
-#
 function pdfgrep() {
   find . -name '*.pdf' -exec pdftotext {} - \; grep $@;
 }
@@ -18,20 +17,12 @@ function ducks() {
 }
 
 # copy current path
-#
-# usage
-# a.
-#   CCP
-#   switch terminal window
-#   CTRL + V
-#
 function ccp() {
   pwd | pbcopy
 }
 
 function take() {
-  mkdir -p "$1"
-  cd "$1"
+  mkdir -p "$1" && cd "$1"
 }
 
 # kill the process by name

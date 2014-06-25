@@ -28,3 +28,8 @@ gem_package 'flay' do
   action :install
   options '--no-ri --no-rdoc'
 end
+
+gem_package 'rubocop' do
+  action :install
+  options '--no-ri --no-rdoc'
+end
