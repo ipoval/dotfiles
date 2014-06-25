@@ -22,7 +22,7 @@ function ccp() {
 }
 
 function take() {
-  mkdir -p "$1" && cd "$1"
+  mkdir -p "$1" && cd "$_"
 }
 
 # kill the process by name
