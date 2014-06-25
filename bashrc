@@ -8,4 +8,10 @@ OLDPWD=$(cat ~/.pwd)
 
 psysinfo;
 
-test `which tmux` && tmux
+# launch tmux
+if [ -n "$(which tmux)" ]
+then
+  tmux
+else
+  brew install tmux
+fi
