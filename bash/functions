@@ -29,7 +29,7 @@ function take() {
 # a. kil skype
 #
 function kil() {
-  ps ax | grep -i $1 | cut -d ' ' -f 1 | xargs kill -9
+  ps ax | grep -i "$1" | cut -d ' ' -f 1 | xargs kill -9
 }
 
 function g() {
@@ -53,7 +53,7 @@ function gbt() {
 # Init a remote git repo from the local one
 # a. `new-git git@example.com repository_name`
 function new-git() {
-  ssh $1 "mkdir $2.git && cd $2.git && git --bare init"
+  ssh "$1" "mkdir $2.git && cd $2.git && git --bare init"
   git remote add origin $1:$2.git
   git push origin master
   git config branch.master.remote origin
@@ -111,7 +111,11 @@ function __rm_single_file() {
 
 # length "string" # => 6
 function length() {
-  echo $1 | grep -ho . | wc -l;
+  # impl 1
+  echo $1 | grep -ho . | wc -l
+
+  # impl 2
+  # `printf $1 | wc -c`
 }
 
 # upcase "str" # => "STR"
@@ -160,4 +164,21 @@ function psysinfo() {
 # found out the classes/modules which are "dead code".
 function grep_class_count() {
   grep -rh '^[[:space:]]*\(class\|module\)\b' app lib --include='*.rb' | sed 's/^[[:space:]]*//' | cut -d ' ' -f 2 | while read klass; do echo "`grep -rl "\b$klass\b" app lib --include="*.rb" | wc -l` $klass"; done | sort -n
+}
+
+# usage:
+#  if ! has 'curl'; then
+#    if has 'wget'; then
+#      # Emulate curl with wget
+#      curl() {
+#        ARGS="$* "
+#        ARGS=${ARGS/-s /-q }
+#        ARGS=${ARGS/-o /-O }
+#        wget $ARGS
+#      }
+#    fi
+#  fi
+function has() {
+  type "$1" > /dev/null 2>&1
+  return $?
 }
