@@ -56,11 +56,11 @@ has() {
 }
 
 if has 'jshint'; then
-  git diff-index --cached --name-only "$against" | \grep '**/*.js' | xargs jshint
+  git diff-index --cached --name-only --diff-filter=AMCR "$against" | \grep '**/*.js' | xargs jshint
 fi
 
 if has 'rubocop'; then
-  git diff-index --cached --name-only "$against" | \grep '**/*.rb' | xargs rubocop
+  git diff-index --cached --name-only --diff-filter=AMCR "$against" | \grep '**/*.rb' | xargs rubocop
 fi
 #########################################################################################
 
