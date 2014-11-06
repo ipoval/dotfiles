@@ -2,6 +2,10 @@
 
 # set -ex # debug mode
 
+pman () {
+  man -t ${1} | open -f -a /Applications/Preview.app/
+}
+
 function hostip() {
   ip=`sudo ifconfig en0 | \egrep "inet[[:space:]]" | cut -f 2 -d " "`
   echo "Your IP address is $ip"
