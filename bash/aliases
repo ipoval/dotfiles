@@ -1,14 +1,15 @@
 alias echo='echo -e'              # enable \n
 alias s='cd ..'                   # up one dir
 # alias cd="echo '\033[31m use->PUSHD,POPD,DIRS \033[30m'; cd $@"
+alias echopath="echo $PATH | tr ':' '\n'"
 alias pu='pushd'
 alias po='popd'
 alias di='dirs'
 alias cls='clear; ls'
 alias history='history 30'
 alias ls='ls -GFlh'
-alias l.='ls -d .[^.]*'           # show only hidden (.dot) directories
 alias l='ls -lhGt'                # -l long listing, most recent first
+alias l.='ls -d .[^.]*'           # show only hidden (.dot) directories
 alias rm='rm -iv'
 alias mv='mv -i'
 alias cp='cp -i'
