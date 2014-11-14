@@ -4,8 +4,8 @@ then
 fi
 
 # Gobbler & Chef
-source ~/src/mam/config/mam-profile.bash
-source ~/src/mam_chef/scripts/mam_chef.bash
+# source ~/src/mam/config/mam-profile.bash
+# source ~/src/mam_chef/scripts/mam_chef.bash
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
