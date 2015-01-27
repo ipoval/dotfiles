@@ -213,3 +213,11 @@ sum() {
   [[ $# -eq 2 ]] || { echo 'sum function requires 2 arguments'; return 1; }
   return $(( $1 + $2 ));
 }
+
+# Use for example in `git checkout -b 3432-$(gitbranchname "copied issue name from ticket")`
+gitbranchname() {
+  [[ $# -eq 1 ]] || { echo 'gitbranchname function requires 1 argument'; return 1; }
+
+  branch_name=$(printf "$1" | tr [A-Z] [a-z] | tr -s [[:space:]] '-')
+  printf "$branch_name"
+}
