@@ -202,3 +202,7 @@ function occurrences() {
   local count=$(echo $2 | grep -oh $1 | wc -l);
   echo $count;
 }
+
+function migration_time() {
+  echo "`date +%F%r`" | tr -d ': APM' | tr -d '-'
+}
