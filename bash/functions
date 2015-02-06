@@ -216,7 +216,7 @@ sum() {
 
 # Use for example in `git checkout -b 3432-$(gitbranchname "copied issue name from ticket")`
 gitbranchname() {
-  [[ $# -eq 1 ]] || { echo 'gitbranchname function requires 1 argument'; return 1; }
+  [[ $# -eq 1 ]] || { echo "${FUNCNAME[0]} function requires 1 argument"; return 1; }
 
   branch_name=$(printf "$1" | tr [A-Z] [a-z] | tr -s [[:space:]] '-')
   printf "$branch_name"
