@@ -210,7 +210,8 @@ function migration_time() {
 # sum 1 2
 # echo $? => 3
 sum() {
-  [[ $# -eq 2 ]] || { echo 'sum function requires 2 arguments'; return 1; }
+  [[ $# -eq 2 ]] || { echo "${FUNCNAME[0]} function requires 2 arguments"; return 1; }
+
   return $(( $1 + $2 ));
 }
 
