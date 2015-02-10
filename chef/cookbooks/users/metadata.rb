@@ -1,3 +1,4 @@
+name             'users'
 maintainer       '@ipoval'
 maintainer_email 'ipoval@ya.ru'
 description      'configures users and groups'

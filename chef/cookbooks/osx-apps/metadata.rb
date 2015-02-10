@@ -1,3 +1,4 @@
+name             'osx-apps'
 maintainer       'ipoval'
 maintainer_email 'ipoval@ya.ru'
 description      'configure macbook'

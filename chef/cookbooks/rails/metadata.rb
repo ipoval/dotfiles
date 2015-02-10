@@ -1,3 +1,4 @@
+name             'rails'
 maintainer       'ipoval'
 maintainer_email 'ipoval@ya.ru'
 description      'sample rails app'

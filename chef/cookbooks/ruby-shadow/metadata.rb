@@ -1,3 +1,4 @@
+name             'ruby-shadow'
 maintainer       '@ipoval'
 maintainer_email 'ipoval@ya.ru'
 description      'ruby shadow'
