@@ -1,6 +1,8 @@
 export EDITOR="/usr/local/bin/mate -w"
 export PATH=$PATH:~/bin:~/bin/dotfiles:/usr/local/sbin:/usr/local/share/npm/bin/
 export HISTIGNORE="clear:bg:fg:cd:cd -:exit:date:w:* --help"
+export HISTSIZE=2000
+export HISTFILESIZE=4000
 export RMATE="-R 52698:127.0.0.1:52698"
 
 # Ruby memory management
