@@ -222,3 +222,19 @@ gitbranchname() {
   branch_name=$(printf "$1" | tr [A-Z] [a-z] | tr -s [[:space:]] '-')
   printf "$branch_name"
 }
+
+# Find matching pattern in bundled gems.
+# Useful for example to find which libraries use ActionView: gemsack "action_view/railtie"
+function gemsack() {
+  if ! has 'bundle'; then
+    echo 'bundle command is not found' 1>&2
+    return 1
+  fi
+
+  if ! bundle show --paths > /dev/null; then
+    echo "no Gemfile in ${PWD}" 1>&2
+    return 1
+  fi
+
+  bundle show --paths | xargs grep -r -i "$@"
+}
