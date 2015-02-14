@@ -123,6 +123,7 @@ function __rm_single_file() {
 }
 
 # length "string" # => 6
+# basically the same as parameter expansion in BASH: ${#var} to get the length of the string
 function length() {
   # impl 1
   echo $1 | grep -ho . | wc -l
