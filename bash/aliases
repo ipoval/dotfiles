@@ -28,3 +28,4 @@ alias cdgems='cd $(gem environment | \grep "INSTALLATION DIRECTORY" | cut -c 29-
 alias be='bundle exec'
 
 alias cdtr='cd ~/.Trash/'
+alias amend='git commit --amend --no-edit'
